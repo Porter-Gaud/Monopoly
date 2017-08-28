@@ -1,0 +1,40 @@
+GO,0,special,0
+Mediteranian,60,purple,2
+Community Chest,000,special,0
+Baltic,60,purple,4
+Income Tax,200,special,0
+Reading RR,200,black,25
+Oriental,100,blue,6
+Chance,000,special,0
+Vermont,100,blue,6
+Connecticut,120,blue,8
+JAIL,000,special,0
+St. Charles,140,pink,10
+Electric Company,150,silver,0
+States,140,pink,10
+Virginia,160,pink,12
+Pennsylvania RR,200,black,25
+St. James,180,orange,14
+Community Chest,000,special,0
+Tennessee,180,orange,14
+New York,200,orange,16
+Free Parking,000,special,0
+Kentucky,220,red,18
+Chance,000,special,0
+Indiana,220,red,18
+Illiois,240,red,20
+B&O RR,200,blank,25
+Atlantic,260,yellow,22
+Ventor,260,yellow,22
+Water Works,150,silver,10
+Marvin Gardens,280,yellow,24
+Go-To-Jail,000,special,0
+Pacific,300,green,26
+North Carolina,300,green,26
+Community Chest,000,special,0
+Pennsylvania,320,green,28
+Short Line RR,200,black,25
+Chance,000,special,0
+Park Place,350,navy,35
+Luxery Tax,75,special,0
+Boardwalk,400,navy,50
