@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D84BE7FD1F798A5300F7970A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BE7FC1F798A5300F7970A /* Color.swift */; };
+		D84BE7FF1F798BF500F7970A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84BE7FE1F798BF500F7970A /* IntroViewController.swift */; };
 		D86047CB1F4FC7B20026A5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86047CA1F4FC7B20026A5EB /* AppDelegate.swift */; };
 		D86047CD1F4FC7B20026A5EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86047CC1F4FC7B20026A5EB /* ViewController.swift */; };
 		D86047D01F4FC7B30026A5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86047CE1F4FC7B30026A5EB /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D84BE7FC1F798A5300F7970A /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D84BE7FE1F798BF500F7970A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		D86047C71F4FC7B20026A5EB /* Monopoly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monopoly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86047CA1F4FC7B20026A5EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D86047CC1F4FC7B20026A5EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			children = (
 				D86047E01F4FC8280026A5EB /* Player.swift */,
 				D86047E41F4FC9050026A5EB /* Property.swift */,
+				D84BE7FC1F798A5300F7970A /* Color.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 		D86047DE1F4FC7D10026A5EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D84BE7FE1F798BF500F7970A /* IntroViewController.swift */,
 				D86047CC1F4FC7B20026A5EB /* ViewController.swift */,
 			);
 			name = Controller;
@@ -177,6 +183,8 @@
 				D86047CD1F4FC7B20026A5EB /* ViewController.swift in Sources */,
 				D86047E11F4FC8280026A5EB /* Player.swift in Sources */,
 				D86047E51F4FC9050026A5EB /* Property.swift in Sources */,
+				D84BE7FF1F798BF500F7970A /* IntroViewController.swift in Sources */,
+				D84BE7FD1F798A5300F7970A /* Color.swift in Sources */,
 				D86047CB1F4FC7B20026A5EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +349,7 @@
 				D86047DB1F4FC7B30026A5EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

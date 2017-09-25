@@ -12,12 +12,12 @@ class Player {
     
     let name: String
     var location: Int
-    var money: Int
+    var money = 500000
     
-    init(name: String, location: Int, money: Int) {
+    init(name: String, location: Int) {
         self.name = name
         self.location = location
-        self.money = money
     }
     
 }
+ 

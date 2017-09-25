@@ -1,30 +1,24 @@
 //
-//  ViewController.swift
+//  IntroViewController.swift
 //  Monopoly
 //
-//  Created by Tillson Galloway on 8/24/17.
+//  Created by Tillson Galloway on 9/25/17.
 //  Copyright © 2017 Porter-Gaud School. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class IntroViewController: UIViewController {
 
-    var players = [Player]()
-    var board = [Property]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
-

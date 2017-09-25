@@ -13,14 +13,14 @@ class Property {
     let name: String
     let price: Int
     let color: String // TODO: Make color enum
-
+    
     var location: Int
     var owner: Player
-
-    init(name: String, location: Int, money: Int) {
+    
+    init(name: String, location: Int, price: Int) {
         self.name = name
         self.location = location
-        self.money = money
+        self.price = price
     }
     
 }
