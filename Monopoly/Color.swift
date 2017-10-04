@@ -12,10 +12,10 @@ import Foundation
  https://jackmagic88.files.wordpress.com/2011/12/blanc-board-with-colour.png
 */
 
-enum Color {
+enum Color: String {
      case purple, blue, pink, orange, red, yellow, green, navy, black, special
     
     func fromString(color: String) -> Color {
-        return Color(rawValue: color)
+        return Color(rawValue: color)!
     }
 }
