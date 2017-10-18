@@ -14,6 +14,8 @@ class Player {
     var location: Int
     var money = 500000
     
+    var playerView: UIView!
+    
     init(name: String, location: Int) {
         self.name = name
         self.location = location

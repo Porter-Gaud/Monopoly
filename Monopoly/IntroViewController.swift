@@ -11,9 +11,9 @@ import UIKit
 
 class IntroViewController: UIViewController {
     
-    @IBOutlet weak var playerNumberWarning: UILabel!
     @IBOutlet weak var playerPickerView: UIPickerView!
-    var numberOfPlayers : Int = 0
+    
+    var numberOfPlayers = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,14 @@ class IntroViewController: UIViewController {
     }
     
     @IBAction func startGame(_ sender: UIButton) {
-        if numberOfPlayers >= 2 {
-            performSegue(withIdentifier: "startGame", sender: self)
-        } else {
-            
-            playerNumberWarning.text = "You need to select an amount of players"
-            
+        performSegue(withIdentifier: "startGame", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startGame" {
+            // TIP: Load player names in here!
+            (segue.destination as! ViewController).playerCount = numberOfPlayers
         }
-        
     }
     
 }

@@ -13,15 +13,19 @@ class Property {
     let name: String
     let price: Int
     let color: Color
+    let rent: Int
     
     var location: Int
     var owner: Player?
     
-    init(name: String, location: Int, color: Color, price: Int) {
+    var view: UIView!
+    
+    init(name: String, location: Int, color: Color, price: Int, rent: Int) {
         self.name = name
         self.price = price
         self.color = color
         self.location = location
+        self.rent = rent
     }
     
 }

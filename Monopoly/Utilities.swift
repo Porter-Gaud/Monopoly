@@ -12,18 +12,27 @@ class Utilities {
     
     class func getPropertiesFromFile() -> [Property] {
         var properties = [Property]()
-        
-        let bundle = Bundle.main
-        let path = bundle.path(forResource: "properties", ofType: "txt")
-        do {
-            let content = try NSString(contentsOfFile: path!, encoding: String.Encoding.utf8.rawValue)
-            print(content)
-        } catch let error as Error {
-            print("Error while loading properties from file: \(error)")
-            return properties
-        }
-        return properties
-        
 
+        if let path = Bundle.main.path(forResource: "properties", ofType: "txt") {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let array = data.components(separatedBy: .newlines)
+                for (index, line) in array.enumerated() {
+                    if line == "" {
+                        continue
+                    }
+                    let propertyData = line.components(separatedBy: ",")
+                    let name = propertyData[0]
+                    let price = Int(propertyData[1])!
+                    let color = Color(rawValue: propertyData[2])!
+                    let rent = Int(propertyData[3])!
+                    properties.append(Property(name: name, location: index, color: color, price: price, rent: rent))
+                }
+            } catch {
+                print("ERROR WHILE LOADING PROPERTIES: \(error)")
+            }
+        }
+        
+        return properties
     }
 }
