@@ -16,6 +16,7 @@
 		D86047D51F4FC7B30026A5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86047D31F4FC7B30026A5EB /* LaunchScreen.storyboard */; };
 		D86047E11F4FC8280026A5EB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86047E01F4FC8280026A5EB /* Player.swift */; };
 		D86047E51F4FC9050026A5EB /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86047E41F4FC9050026A5EB /* Property.swift */; };
+		D8F59E931F853A9B00E385FE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F59E921F853A9B00E385FE /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		D86047D61F4FC7B30026A5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86047E01F4FC8280026A5EB /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D86047E41F4FC9050026A5EB /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		D8F59E921F853A9B00E385FE /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D8F59E941F853DB900E385FE /* properties.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = properties.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +70,9 @@
 				D86047DD1F4FC7C60026A5EB /* View */,
 				D86047DC1F4FC7BA0026A5EB /* Model */,
 				D86047CA1F4FC7B20026A5EB /* AppDelegate.swift */,
+				D8F59E921F853A9B00E385FE /* Utilities.swift */,
 				D86047CE1F4FC7B30026A5EB /* Main.storyboard */,
+				D8F59E941F853DB900E385FE /* properties.txt */,
 				D86047D11F4FC7B30026A5EB /* Assets.xcassets */,
 				D86047D31F4FC7B30026A5EB /* LaunchScreen.storyboard */,
 				D86047D61F4FC7B30026A5EB /* Info.plist */,
@@ -182,6 +187,7 @@
 			files = (
 				D86047CD1F4FC7B20026A5EB /* ViewController.swift in Sources */,
 				D86047E11F4FC8280026A5EB /* Player.swift in Sources */,
+				D8F59E931F853A9B00E385FE /* Utilities.swift in Sources */,
 				D86047E51F4FC9050026A5EB /* Property.swift in Sources */,
 				D84BE7FF1F798BF500F7970A /* IntroViewController.swift in Sources */,
 				D84BE7FD1F798A5300F7970A /* Color.swift in Sources */,
