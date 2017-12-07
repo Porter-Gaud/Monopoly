@@ -35,4 +35,11 @@ class Utilities {
         
         return properties
     }
+    
+    class func getCenter(rect: CGRect) -> CGPoint {
+        return CGPoint(x: rect.origin.x + rect.width / 2, y: rect.origin.y + rect.height / 2)
+    }
+    class func pointThatCenters(view: UIView, on: CGPoint) -> CGPoint {
+        return CGPoint(x: on.x - (view.frame.width / 2), y: on.y - (view.frame.height / 2))
+    }
 }

@@ -20,6 +20,8 @@ class Property {
     
     var view: UIView!
     
+    var centerCoordinate: CGPoint?
+    
     init(name: String, location: Int, color: Color, price: Int, rent: Int) {
         self.name = name
         self.price = price

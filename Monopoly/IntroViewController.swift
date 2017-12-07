@@ -48,7 +48,6 @@ extension IntroViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         numberOfPlayers = row + 2
-        
     }
 
 }
