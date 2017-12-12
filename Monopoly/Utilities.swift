@@ -10,6 +10,15 @@ import UIKit
 
 class Utilities {
     
+    static let playerColors = [
+        UIColor(red:0.94, green:0.36, blue:0.37, alpha:1.0),
+        UIColor(red:0.18, green:0.19, blue:0.26, alpha:1.0),
+        UIColor(red:0.31, green:0.36, blue:0.46, alpha:1.0),
+        UIColor(red:0.75, green:0.75, blue:0.75, alpha:1.0),
+        UIColor(red:0.27, green:0.27, blue:0.27, alpha:1.0),
+        UIColor(red:0.34, green:0.64, blue:0.65, alpha:1.0)
+    ]
+    
     class func getPropertiesFromFile() -> [Property] {
         var properties = [Property]()
 
@@ -42,4 +51,5 @@ class Utilities {
     class func pointThatCenters(view: UIView, on: CGPoint) -> CGPoint {
         return CGPoint(x: on.x - (view.frame.width / 2), y: on.y - (view.frame.height / 2))
     }
+    
 }

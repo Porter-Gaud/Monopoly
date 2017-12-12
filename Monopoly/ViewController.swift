@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         boardImageView.backgroundColor = .green
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.boardImageView.frame.size = self.boardImageView.image!.size
+            self.boardImageView.frame.size.height = 670
             let propertyWidth = self.boardImageView.frame.width / (37/3) // 37/3 ratio found using system of equations [total = 2corner + 9space, corner = (5/3)space]
             let cornerWidth = propertyWidth * (5/3)
             let propertyHeight = cornerWidth
@@ -101,16 +102,18 @@ class ViewController: UIViewController {
                 let theView = UIView(frame: CGRect(x: 0, y: (CGFloat(index) * height), width: self.playerView.frame.width, height: height))
                 theView.layer.borderWidth = 1.0
                 theView.layer.borderColor = UIColor.white.cgColor
-                theView.backgroundColor = UIColor.black // MAKE THIS A RANDOM NICE LOOKING COLOR
+                theView.backgroundColor = Utilities.playerColors[index]
                 
-                let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.playerView.frame.width, height: height / 4))
-                label.font = UIFont.systemFont(ofSize: 32.0)
+                let label = UILabel(frame: CGRect(x: 20, y: 0, width: self.playerView.frame.width, height: height / 4))
+                label.font = UIFont.systemFont(ofSize: height / 4.5)
                 label.text = player.name
+                label.adjustsFontSizeToFitWidth = true
                 label.textColor = .white
                 theView.addSubview(label)
-                let moneyLabel = UILabel(frame: CGRect(x: 0, y: height / 4, width: self.playerView.frame.width, height: height / 4))
-                moneyLabel.font = UIFont.systemFont(ofSize: 42.0)
+                let moneyLabel = UILabel(frame: CGRect(x: 20, y: height / 4, width: self.playerView.frame.width, height: height / 4))
+                moneyLabel.font = UIFont.systemFont(ofSize: height / 4)
                 moneyLabel.text = "$\(player.money)"
+                moneyLabel.adjustsFontSizeToFitWidth = true
                 moneyLabel.textColor = .white
                 theView.addSubview(moneyLabel)
                 
