@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         boardImageView.contentMode = .scaleAspectFit
         boardImageView.backgroundColor = .green
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.boardImageView.clipsToBounds = true
             self.boardImageView.frame.size = self.boardImageView.image!.size
-            self.boardImageView.frame.size.height = 670
             let propertyWidth = self.boardImageView.frame.width / (37/3) // 37/3 ratio found using system of equations [total = 2corner + 9space, corner = (5/3)space]
             let cornerWidth = propertyWidth * (5/3)
             let propertyHeight = cornerWidth
@@ -70,15 +70,16 @@ class ViewController: UIViewController {
                 property.centerCoordinate = Utilities.getCenter(rect: rect)
             }
             
-            for player in self.players {
-                let playerMarker = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            for (index, player) in self.players.enumerated() {
+                let playerMarker = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
                 playerMarker.frame.origin = Utilities.pointThatCenters(view: playerMarker, on: self.board[0].centerCoordinate!)
                 playerMarker.font = UIFont.systemFont(ofSize: 20.0)
                 playerMarker.text = player.name
                 playerMarker.textColor = .white
                 playerMarker.adjustsFontSizeToFitWidth = true
-                playerMarker.backgroundColor = .red
-                playerMarker.layer.cornerRadius = playerMarker.frame.width / 2.0
+                playerMarker.backgroundColor = Utilities.playerColors[index]
+                playerMarker.layer.cornerRadius = playerMarker.frame.width / 2
+                playerMarker.layer.masksToBounds = true
                 self.boardImageView.addSubview(playerMarker)
                 player.playerMarker = playerMarker
             }
