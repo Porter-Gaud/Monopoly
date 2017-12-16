@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         // Graphics
         diceImageView1.image = UIImage(named: "dice\(randomDiceIndex1)")
         diceImageView2.image = UIImage(named: "dice\(randomDiceIndex2)")
-        // End Grtaphics
+        // End Graphics
         
         return randomDiceIndex1 + randomDiceIndex2
     }
