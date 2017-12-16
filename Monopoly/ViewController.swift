@@ -96,6 +96,9 @@ class ViewController: UIViewController {
     }
 
     func playGame() {
+        
+        movePiece(player: players[0])
+        
         // Is player in jail?
         
         // If not, roll dice
@@ -111,7 +114,12 @@ class ViewController: UIViewController {
         // next players turn
     }
 
-    // This function updates the player's graphical location (on the screen) to whatever is set for player.location
+    
+    /**
+     Updates the player's graphical location (on the screen) to whatever is set for player.location.
+     
+     - Parameter player: The player who you would like to update the graphical location for.
+     */
     func movePiece(player: Player) {
         player.playerMarker.frame.origin = Utilities.pointThatCenters(view: player.playerMarker, on: self.board[player.location].centerCoordinate!)
     }

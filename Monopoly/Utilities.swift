@@ -11,6 +11,10 @@ import UIKit
 class Utilities {
     
     // MARK: Monopoly Utilities
+    
+    /**
+     Colors that correspond with players for graphical scoreboard/board pieces.
+     */
     static let playerColors = [
         UIColor(red:0.94, green:0.36, blue:0.37, alpha:1.0),
         UIColor(red:0.18, green:0.19, blue:0.26, alpha:1.0),
@@ -20,6 +24,11 @@ class Utilities {
         UIColor(red:0.34, green:0.64, blue:0.65, alpha:1.0)
     ]
     
+    /**
+     Deserializes properties.txt into an array of Property objects.
+     
+     - Returns: Array of properties based on the contents of properties.txt.
+     */
     class func getPropertiesFromFile() -> [Property] {
         var properties = [Property]()
 
@@ -47,6 +56,13 @@ class Utilities {
     }
     
     
+    /**
+     Sets up a Monopoly board in the ViewController class.
+     
+     - Parameter vc: Instance of ViewController.  Usually this is just "self"
+     
+     - Note: This is in Utilities to keep the ViewController 'clean'. This function must be called from the ViewController class or the app will crash.
+     */
     class func setupBoard(vc: ViewController) {
         vc.boardImageView.clipsToBounds = true
         vc.boardImageView.frame.size = vc.boardImageView.image!.size
@@ -102,9 +118,24 @@ class Utilities {
 
     
     // MARK: General Utilities
+    
+    /**
+     Get center point of a rectangle.
+     
+     - Parameter rect: The CGRect that you want the center of
+     - Returns: CGPoint of the center
+     */
     class func getCenter(rect: CGRect) -> CGPoint {
         return CGPoint(x: rect.origin.x + rect.width / 2, y: rect.origin.y + rect.height / 2)
     }
+    
+    /**
+     Get an origin point (top left) that will center a UIView of any size around a point.
+     
+     - Parameter view: The CGRect that you want the center of
+     - Parameter on: The point that you want to center the view around.
+     - Returns: CGPoint of the origin that will center the view around a point.
+     */
     class func pointThatCenters(view: UIView, on: CGPoint) -> CGPoint {
         return CGPoint(x: on.x - (view.frame.width / 2), y: on.y - (view.frame.height / 2))
     }
