@@ -19,9 +19,6 @@ class ViewController: UIViewController {
     
     var currentPlayerTurnIndex = 0
     
-    var randomDiceIndex1 : Int = 0
-    var randomDiceIndex2 : Int = 0
-    
     var spaces = 0
     
     @IBOutlet weak var playerView: UIView!
@@ -86,26 +83,28 @@ class ViewController: UIViewController {
     }
     
     func diceRoll() -> Int {
-        randomDiceIndex1 = 0
-        randomDiceIndex2 = 0
+        let randomDiceNumber1 = 1
+        let randomDiceNumber2 = 1
         
         // Graphics
-        diceImageView1.image = UIImage(named: "dice\(randomDiceIndex1)")
-        diceImageView2.image = UIImage(named: "dice\(randomDiceIndex2)")
+        // Images called dice1 dice2...dice6 exist in Assets.xcassets and correspond with the number of pips on the dice.
+        diceImageView1.image = UIImage(named: "dice\(randomDiceNumber1)")
+        diceImageView2.image = UIImage(named: "dice\(randomDiceNumber2)")
         // End Graphics
         
-        return randomDiceIndex1 + randomDiceIndex2
+        return randomDiceNumber1 + randomDiceNumber2
     }
 
     func playGame() {
+        // Is player in jail?
         
-        // is player in jail?
+        // If not, roll dice
         
-        // if not, roll dice
+        // Move player to new location
         
-        // move player to new location
+        // Update the player's location graphically – function is movePiece(player: player)
         
-        // what kind of property did they land on? can they buy it? Do they get money? Do they pay rent? Did they pass go?
+        // What kind of property did they land on? can they buy it? Do they get money? Do they pay rent? Did they pass go?
         
         // Did they roll doubles?
         
@@ -113,7 +112,7 @@ class ViewController: UIViewController {
     }
 
     // This function updates the player's graphical location (on the screen) to whatever is set for player.location
-    func movePieceFor(player: Player) {
+    func movePiece(player: Player) {
         player.playerMarker.frame.origin = Utilities.pointThatCenters(view: player.playerMarker, on: self.board[player.location].centerCoordinate!)
     }
     
