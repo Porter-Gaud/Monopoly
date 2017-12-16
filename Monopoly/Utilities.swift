@@ -10,6 +10,7 @@ import UIKit
 
 class Utilities {
     
+    // MARK: Monopoly Utilities
     static let playerColors = [
         UIColor(red:0.94, green:0.36, blue:0.37, alpha:1.0),
         UIColor(red:0.18, green:0.19, blue:0.26, alpha:1.0),
@@ -45,6 +46,62 @@ class Utilities {
         return properties
     }
     
+    
+    class func setupBoard(vc: ViewController) {
+        vc.boardImageView.clipsToBounds = true
+        vc.boardImageView.frame.size = vc.boardImageView.image!.size
+        let propertyWidth = vc.boardImageView.frame.width / (37/3) // 37/3 ratio found using system of equations [total = 2corner + 9space, corner = (5/3)space]
+        let cornerWidth = propertyWidth * (5/3)
+        let propertyHeight = cornerWidth
+        
+        // Bottom Row
+        vc.board[0].centerCoordinate = Utilities.getCenter(rect: CGRect(x: vc.boardImageView.frame.width - cornerWidth, y: vc.boardImageView.frame.height - propertyHeight, width: cornerWidth, height: propertyHeight))
+        for i in 1..<10 {
+            let property = vc.board[i]
+            let rect = CGRect(x: vc.boardImageView.frame.width - cornerWidth - (propertyWidth * CGFloat(i)), y: vc.boardImageView.frame.height - propertyHeight, width: propertyWidth, height: propertyHeight)
+            property.centerCoordinate = Utilities.getCenter(rect: rect)
+        }
+        // Left Row
+        vc.board[10].centerCoordinate = Utilities.getCenter(rect: CGRect(x: 0, y: vc.boardImageView.frame.height - propertyHeight, width: cornerWidth, height: propertyHeight))
+        for i in 1..<10 {
+            let property = vc.board[i + 10]
+            let rect = CGRect(x: 0, y: vc.boardImageView.frame.height - cornerWidth - (propertyWidth * CGFloat(i)), width: propertyHeight, height: propertyWidth)
+            property.centerCoordinate = Utilities.getCenter(rect: rect)
+        }
+        // Top Row
+        vc.board[20].centerCoordinate = Utilities.getCenter(rect: CGRect(x: 0, y: vc.boardImageView.frame.height - propertyHeight, width: cornerWidth, height: propertyHeight))
+        for i in 1..<10 {
+            let property = vc.board[i + 20]
+            let rect = CGRect(x: cornerWidth + (propertyWidth * CGFloat(i - 1)), y: 0, width: propertyWidth, height: propertyHeight)
+            property.centerCoordinate = Utilities.getCenter(rect: rect)
+        }
+        // Alvin Row
+        vc.board[30].centerCoordinate = Utilities.getCenter(rect: CGRect(x: 0, y: 0, width: cornerWidth, height: propertyHeight))
+        for i in 1..<10 {
+            let property = vc.board[i + 30]
+            let rect = CGRect(x: 0, y: vc.boardImageView.frame.height + cornerWidth + (propertyWidth * CGFloat(i - 1)), width: propertyHeight, height: propertyWidth)
+            property.centerCoordinate = Utilities.getCenter(rect: rect)
+        }
+        
+        for (index, player) in vc.players.enumerated() {
+            let playerMarker = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            playerMarker.frame.origin = Utilities.pointThatCenters(view: playerMarker, on: vc.board[0].centerCoordinate!)
+            playerMarker.font = UIFont.systemFont(ofSize: 20.0)
+            playerMarker.text = player.name
+            playerMarker.textColor = .white
+            playerMarker.adjustsFontSizeToFitWidth = true
+            playerMarker.backgroundColor = Utilities.playerColors[index]
+            playerMarker.layer.cornerRadius = playerMarker.frame.width / 2
+            playerMarker.layer.masksToBounds = true
+            vc.boardImageView.addSubview(playerMarker)
+            player.playerMarker = playerMarker
+        }
+        
+
+    }
+
+    
+    // MARK: General Utilities
     class func getCenter(rect: CGRect) -> CGPoint {
         return CGPoint(x: rect.origin.x + rect.width / 2, y: rect.origin.y + rect.height / 2)
     }

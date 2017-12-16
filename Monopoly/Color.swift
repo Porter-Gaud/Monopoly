@@ -8,10 +8,6 @@
 
 import Foundation
 
-/*
- https://jackmagic88.files.wordpress.com/2011/12/blanc-board-with-colour.png
-*/
-
 enum Color: String {
     case purple = "purple"
     case blue = "blue"

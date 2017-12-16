@@ -71,7 +71,6 @@
 				D86047DD1F4FC7C60026A5EB /* View */,
 				D86047DC1F4FC7BA0026A5EB /* Model */,
 				D86047CA1F4FC7B20026A5EB /* AppDelegate.swift */,
-				D8F59E921F853A9B00E385FE /* Utilities.swift */,
 				D81F9A371F979BD3006E1725 /* properties.txt */,
 				D86047CE1F4FC7B30026A5EB /* Main.storyboard */,
 				D86047D11F4FC7B30026A5EB /* Assets.xcassets */,
@@ -110,6 +109,7 @@
 		D86047DF1F4FC7D60026A5EB /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				D8F59E921F853A9B00E385FE /* Utilities.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
